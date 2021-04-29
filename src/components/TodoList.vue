@@ -17,7 +17,12 @@
                   <span class="completeBtn">{{todoItem.checked?'완료':'미완료'}}</span>
                   <span :class="{lineThrough: todoItem.completed}">{{todoItem.todoTitle}}</span>
                 </b-form-checkbox>
-                <b-form-input v-model="todoItem.todoTitle" @keyup.enter="modifyTodo(todoItemKey)" v-else>{{todoItem.todoTitle}}</b-form-input>
+                <b-form-input 
+                  v-model="todoItem.todoTitle" 
+                  :ref="'modifyInput' + todoItemKey"
+                  @keyup.enter="modifyTodo(todoItemKey)" 
+                  v-else
+                >{{todoItem.todoTitle}}</b-form-input>
               </b-col>
               <b-col cols="auto">
                 <b-button-group>
@@ -47,8 +52,19 @@ export default {
       this.$emit('modifyTodo', todoItem, todoItemKey);
     },
     modifyBtn(todoItemKey) {
-      this.$emit('modifyBtn', todoItemKey)
+      this.$emit('modifyBtn', todoItemKey);
+      this.$nextTick(() =>
+        {
+          // if(document.querySelector('__BVID__40'))
+          this.$refs['modifyInput' + todoItemKey][0].focus()
+          // this.$refs[`modifyInput${todoItemKey}`][0].focus()
+          // console.log('나오냐??')
+        }
+      );
     }
+  },
+  watch: {
+    
   }
 }
 </script>

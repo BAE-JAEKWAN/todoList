@@ -49,6 +49,7 @@ export default {
     modifyBtn(todoItemKey) {
       if(this.todoItems[todoItemKey].toggleModify) {
         this.todoItems[todoItemKey].toggleModify = false;
+        // this.$refs.modifyInput.focus();
       } else {
         this.todoItems[todoItemKey].toggleModify = true;
       }
