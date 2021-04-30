@@ -5,6 +5,7 @@ import TodoHeader from '@/components/TodoHeader.vue'
 import TodoInput from '@/components/TodoInput.vue'
 import TodoList from '@/components/TodoList.vue'
 import TodoFooter from '@/components/TodoFooter.vue'
+import TodoContents from '@/components/common/TodoContents.vue'
 
 
 
@@ -14,12 +15,8 @@ export default new Router({
   mode: 'history',
   routes: [
     {
-      path: '/list',
-      component: TodoList
-    },
-    {
-      path: '/footer',
-      component: TodoFooter
+      path: '/',
+      component: TodoContents
     }
   ]
 })
