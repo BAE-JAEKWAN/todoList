@@ -43,16 +43,16 @@ export default {
   props: ['propsData'],
   methods: {
     toggleComplete(todoItem, todoItemKey) {
-      this.$emit('toggleItem', todoItem, todoItemKey);
+      this.$emit('toggleCompleteEvent', todoItem, todoItemKey);
     },
     removeTodo(todoItem, todoItemKey) {
-      this.$emit('removeTodoItem', todoItem, todoItemKey);
+      this.$emit('removeTodoEvent', todoItem, todoItemKey);
     },
     modifyTodo(todoItem, todoItemKey) {
-      this.$emit('modifyTodo', todoItem, todoItemKey);
+      this.$emit('modifyTodoEvent', todoItem, todoItemKey);
     },
     modifyBtn(todoItemKey) {
-      this.$emit('modifyBtn', todoItemKey);
+      this.$emit('modifyBtnEvent', todoItemKey);
       this.$nextTick(() =>
         {
           // if(document.querySelector('__BVID__40'))

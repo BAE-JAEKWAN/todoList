@@ -4,15 +4,15 @@
     <TodoInput @addTodoItem="addTodo"/>
     <TodoList 
       :propsData="todoItems"
-      @toggleItem="toggleComplete"
-      @removeTodoItem="removeTodo"
-      @modifyTodo="modifyTodo"
-      @modifyBtn="modifyBtn"
+      @toggleCompleteEvent="toggleComplete"
+      @removeTodoEvent="removeTodo"
+      @modifyTodoEvent="modifyTodo"
+      @modifyBtnEvent="modifyBtn"
     />
+    <!-- <router-view/> -->
     <TodoFooter @clearAll="clearTodo"/>
     <!-- <router-link to="/list">list</router-link>
-    <router-link to="/footer">footer</router-link>
-    <router-view/> -->
+    <router-link to="/footer">footer</router-link> -->
   </div>
 </template>
 
